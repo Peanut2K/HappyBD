@@ -1,0 +1,64 @@
+import { useEffect } from 'react';
+import { motion } from "motion/react"
+import './Gallery.css';
+
+function Gallery() {
+    useEffect(() => {
+        // Scroll-triggered progress bar animation
+        scroll(
+          motion(".progress", { scaleX: [0, 1] }, { ease: "linear" })
+        );
+    
+        // Scroll-triggered header animations
+        const sections = document.querySelectorAll(".img-container");
+        sections.forEach((section) => {
+          const header = section.querySelector("h2");
+          scroll(motion(header, { y: [-400, 400] }, { ease: "linear" }), {
+            target: header,
+          });
+        });
+      }, []);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => { 
+            entries.forEach(entry => {
+                console.log(entry);
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }else{
+                    entry.target.classList.remove('visible');
+                }
+            });
+        });
+        
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((element) => observer.observe(element));
+    }, []);
+return (
+    <>
+    <div className="gallery" >
+        <div className="container">
+            <div className="image-wrapper content hidden" id="img-top-left">
+                <img src="/Dow1.jpg" alt=""  />
+            </div>
+            <div className="image-wrapper content hidden" id="img-top-right">
+                <img src="/Dow2.jpg" alt=""  />
+            </div>
+            <div className="image-wrapper content hidden" id="img-bottom-left">
+                <img src="/Dow3.jpg" alt=""  />
+            </div>
+            <div className="image-wrapper content hidden" id="img-bottom-right">
+                <img src="/Dow4.jpg" alt="" />
+            </div>
+            <div className="text-container hidden" id="center" style={{fontWeight:""}}>
+                <p>Wishing you a day filled with love, laughter, and the joy of knowing how much you’re loved. Happy Birthday!</p> 
+            </div>
+        </div>
+    </div>
+
+</>
+    
+);
+}
+
+export default Gallery;

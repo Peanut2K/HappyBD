@@ -1,0 +1,43 @@
+body{
+    overflow-y: scroll;
+}
+
+.rose {
+    opacity: 0; 
+    animation: appear 1s ease-in-out 5s forwards, wave 3s ease-in-out infinite;
+    display: inline-block;
+}
+
+.rose img {
+    width: 150px;
+    animation: appear 1s ease-in-out 5s forwards, wave 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 0 transparent);
+    background: transparent;
+    pointer-events: none;
+}
+
+@keyframes appear {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    75% {
+        transform: rotate(5deg);
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .rose img{
+        width: 100px;
+    }
+}

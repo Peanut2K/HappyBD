@@ -1,0 +1,28 @@
+.vinyl {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .rotating {
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+.Music-Con{
+    transition: transform .2s;
+
+    h3{
+        color: black;
+    }
+}
+
+.Music-Con:hover{
+    transform: scale(1.1);
+}
