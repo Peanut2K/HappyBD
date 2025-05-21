@@ -6,7 +6,7 @@ const Pass = () => {
   const [password, setPassword] = useState(['', '', '', '']);
   const [isUnlocked, setIsUnlocked] = useState(false);
   const inputRefs = useRef([]);
-  const correctPassword = '2420';
+  const correctPassword = '2401';
 
   useEffect(() => {
     if (!isUnlocked) {
@@ -33,7 +33,7 @@ const Pass = () => {
   };
 
   const hint = ()=>{
-    alert("รหัสผ่านคือ 2 ตัวแรกวันเกิดโอ๊ต 2 ตัวหลังวันเกิดฉัตร")
+    alert("รหัสผ่านคือ 2 ตัวแรกวันเกิดพี่ 2 ตัวหลังเดือนเกิดพี่ อิอิ")
   }
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,14 +41,14 @@ const Pass = () => {
     if (enteredPassword === correctPassword) {
       setIsUnlocked(true);
     } else {
-      alert('มึงจำวันเกิดพวกกุไม่ได้อร่อ');
+      alert('คือจำวันเกิดกันไม่ได้ละไง TWT');
       setPassword(['', '', '', '']);
       inputRefs.current[0].focus();
     }
   };
 
   return (
-    <div style={{ textAlign: 'center', marginTop: '50px' }}>
+    <div style={{ textAlign: 'center', marginTop: '50px', height:'100px' }}>
       {!isUnlocked && (
         <>
           <h2 style={{ color: 'black' }}>Unlock to see something 💣</h2>
@@ -72,7 +72,7 @@ const Pass = () => {
               {password.map((digit, index) => (
                 <input
                   key={index}
-                  type="text"
+                  type="tel"
                   value={digit}
                   onChange={(e) => handleChange(index, e.target.value)}
                   onKeyDown={(e) => handleKeyDown(index, e)}

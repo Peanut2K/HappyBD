@@ -1,0 +1,140 @@
+#example {
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    left: -25px;
+}
+
+.video-bg, .ct{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.video-bg video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -20%) scale(2);
+    z-index: -1;
+}
+
+#pic1{
+    background-image: url(/anda3.jpg);
+    background-size: 100%;
+    background-position-y: 50%;
+}
+
+#pic2{
+    background-image: url(/anda4.jpg);
+    background-size: 100%;
+    background-position-y: -20px;
+}
+
+#pic3{
+    background-image: url(/anda5.jpg);
+    background-size: 150%;
+    background-position-y: -140px;
+    background-position-x: 0px;
+}
+
+#pic4{
+    background-image: url(/anda7.jpg);
+    background-size: 100%;
+    background-position-y: -80px;
+}
+
+#pic5{
+    background-image: url(/anda8.jpg);
+    background-size: 150%;
+    background-position-x: -px;
+    background-position-y: -250px;
+}
+
+#pic7{
+    background-image: url(/anda9.jpg);
+    background-size: 125%;
+    background-position-x: -50px;
+    background-position-y: -120px;
+}
+
+#pic8{
+    background-image: url(/anda10.jpg);
+    background-size: 150%;
+    background-position-x: -100px;
+    background-position-y: -2250px;
+}
+
+#pic9{
+    background-image: url(/anda11.jpg);
+    background-size: 100%;
+    background-position-x: -px;
+    background-position-y: -50px;
+}
+
+#pic6{
+    background-image: url(/hbd.gif);
+    background-size: 101%;
+}
+
+#progress {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-90deg);
+    z-index: 1;
+}
+
+.bg {
+    stroke: #e0e0e0;
+}
+
+#progress circle {
+    stroke-dashoffset: 0;
+    stroke-width: 8;
+    fill: none;
+}
+
+.indicator {
+    stroke: #ff0077;
+    stroke-width: 8;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    height: 280px;
+    overflow-x: auto;
+    padding: 20px 0;
+    margin: 0px auto 0;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+li {
+    flex: 0 0 300px;  /* Increased width */
+    height: 260px;     /* Increased height */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar {
+    height: 8px;
+    background: #ddd;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}

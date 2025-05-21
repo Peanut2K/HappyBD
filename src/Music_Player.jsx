@@ -44,7 +44,7 @@ const MusicPlayer = () => {
           }}
         />
         <img
-          src="/OatChat.jpg"
+          src="/anda6.jfif"
           alt="Album Cover"
           style={{
             width: '85%',

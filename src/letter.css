@@ -96,7 +96,9 @@ p {
 }
 
 .text{
-  font-family: Noto Sans Thai;
+  /* font-family: Noto Sans Thai; */
+  font-size: 16px;
+  margin-top: 10px;
 }
 
 @media (min-width: 768px) {
